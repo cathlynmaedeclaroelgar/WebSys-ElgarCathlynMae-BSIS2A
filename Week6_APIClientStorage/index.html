@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Week 6 Web Application</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .hero {
+            background-color: #e9f5ff;
+            padding: 70px 20px;
+        }
+
+        .feature-card {
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                Web Application
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="local_storage.html">
+                            Local Storage
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="user_preferences.html">
+                            Preferences
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="weather_api.html">
+                            Weather
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="map_api.html">
+                            Maps
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="github_api.html">
+                            GitHub
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero text-center">
+
+        <div class="container">
+
+            <h1 class="display-5 fw-bold">
+                 Web Application
+            </h1>
+
+            <p class="lead">
+                A collection of client-side web features using
+                Local Storage, APIs, JavaScript, and Bootstrap.
+            </p>
+
+            <a href="#features" class="btn btn-primary">
+                Explore Features
+            </a>
+
+        </div>
+
+    </section>
+
+</header>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main>
+
+    <section id="features" class="container py-5">
+
+        <div class="text-center mb-5">
+
+            <h2>Laboratory Features</h2>
+
+            <p class="text-muted">
+                Explore the different features developed for this laboratory.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Local Storage -->
+            <div class="col-md-6 col-lg-4">
+
+                <article class="card feature-card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3 class="card-title h5">
+                            Local Storage
+                        </h3>
+
+                        <p class="card-text">
+                            Save and retrieve user information
+                            using browser Local Storage.
+                        </p>
+
+                        <a
+                            href="local_storage.html"
+                            class="btn btn-primary"
+                        >
+                            Open Feature
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- User Preferences -->
+            <div class="col-md-6 col-lg-4">
+
+                <article class="card feature-card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3 class="card-title h5">
+                            User Preferences
+                        </h3>
+
+                        <p class="card-text">
+                            Save theme and language preferences
+                            using Local Storage.
+                        </p>
+
+                        <a
+                            href="user_preferences.html"
+                            class="btn btn-primary"
+                        >
+                            Open Feature
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Weather -->
+            <div class="col-md-6 col-lg-4">
+
+                <article class="card feature-card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3 class="card-title h5">
+                            Weather API
+                        </h3>
+
+                        <p class="card-text">
+                            Search for a city and retrieve
+                            current weather information.
+                        </p>
+
+                        <a
+                            href="weather_api.html"
+                            class="btn btn-primary"
+                        >
+                            Check Weather
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Google Maps -->
+            <div class="col-md-6 col-lg-4">
+
+                <article class="card feature-card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3 class="card-title h5">
+                            Google Maps API
+                        </h3>
+
+                        <p class="card-text">
+                            Search for a location and display
+                            it dynamically on a map.
+                        </p>
+
+                        <a
+                            href="map_api.html"
+                            class="btn btn-primary"
+                        >
+                            Open Maps
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- GitHub -->
+            <div class="col-md-6 col-lg-4">
+
+                <article class="card feature-card h-100 shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3 class="card-title h5">
+                            GitHub API
+                        </h3>
+
+                        <p class="card-text">
+                            Search for a GitHub username and
+                            display user information.
+                        </p>
+
+                        <a
+                            href="github_api.html"
+                            class="btn btn-primary"
+                        >
+                            Search GitHub
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-dark text-white py-4">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h5>Week 6 Laboratory</h5>
+
+                <p class="mb-0">
+                    Client-side Web Development
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end">
+
+                <p class="mb-0">
+                    HTML • CSS • JavaScript • Bootstrap
+                </p>
+
+                <p class="mb-0">
+                    &copy; Elgar's Web Application
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JavaScript -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
