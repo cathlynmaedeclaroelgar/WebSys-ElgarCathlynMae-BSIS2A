@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather API</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+<header>
+
+    <nav class="navbar navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                Web Application
+            </a>
+
+            <a class="btn btn-outline-light" href="index.html">
+                Home
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main class="container py-5">
+
+    <section class="card shadow-sm">
+
+        <div class="card-body">
+
+            <h1 class="h3">
+                Weather Checker
+            </h1>
+
+            <p class="text-muted">
+                Enter a city to view its current weather.
+            </p>
+
+
+            <input
+                type="text"
+                id="city"
+                class="form-control mb-3"
+                placeholder="Enter city name"
+            >
+
+
+            <button
+                onclick="getWeather()"
+                class="btn btn-primary"
+            >
+                Get Weather
+            </button>
+
+
+            <div id="weatherResult" class="mt-4"></div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+async function getWeather() {
+
+    let city =
+        document.getElementById("city").value.trim();
+
+
+    if (city === "") {
+
+        document.getElementById("weatherResult").innerHTML =
+            "<div class='alert alert-warning'>Please enter a city.</div>";
+
+        return;
+
+    }
+
+
+    // Replace this with your own OpenWeatherMap API key
+    let apiKey = "a8671bc687c5f36171a109909a04b25d";
+
+
+    let url =
+        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+
+    try {
+
+        let response = await fetch(url);
+
+
+        if (!response.ok) {
+
+            throw new Error("City not found or API request failed.");
+
+        }
+
+
+        let data = await response.json();
+
+
+        document.getElementById("weatherResult").innerHTML = `
+
+            <div class="alert alert-info">
+
+                <h2 class="h4">
+                    ${data.name}, ${data.sys.country}
+                </h2>
+
+                <p>
+                    <strong>Temperature:</strong>
+                    ${data.main.temp} °C
+                </p>
+
+                <p>
+                    <strong>Feels Like:</strong>
+                    ${data.main.feels_like} °C
+                </p>
+
+                <p>
+                    <strong>Weather:</strong>
+                    ${data.weather[0].description}
+                </p>
+
+                <p>
+                    <strong>Humidity:</strong>
+                    ${data.main.humidity}%
+                </p>
+
+            </div>
+
+        `;
+
+    } catch (error) {
+
+        document.getElementById("weatherResult").innerHTML = `
+
+            <div class="alert alert-danger">
+                ${error.message}
+            </div>
+
+        `;
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
